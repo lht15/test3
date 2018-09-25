@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AD57F6EA-8EBF-3835-AD4D-30B5A050871A}</ProjectGuid>
+    <RootNamespace>test3</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.17134.0</WindowsTargetPlatformMinVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <PlatformToolset>v141</PlatformToolset>
+    <OutputDirectory>release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>test3</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <PlatformToolset>v141</PlatformToolset>
+    <OutputDirectory>debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>test3</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">
+    <QtMsBuild>$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">test3</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">test3</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\ActiveQt;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtWidgets;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtGui;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtANGLE;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtCore;release;\include;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\mkspecs\win32-msvc;C:\Program Files\IBM\ILOG\CPLEX_Studio128\concert\include;C:\Program Files\IBM\ILOG\CPLEX_Studio128\cplex\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;NDEBUG;_CONSOLE;IL_STD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>C:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib\qtmain.lib;shell32.lib;C:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib\Qt5AxContainer.lib;C:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib\Qt5AxBase.lib;C:\Qt\Qt5.11.1\5.11.1\msvc2017_64\lib\Qt5Widgets.lib;C:\Qt\Qt5.11.1\5.11.1\msvc2017_64\lib\Qt5Gui.lib;C:\Qt\Qt5.11.1\5.11.1\msvc2017_64\lib\Qt5Core.lib;ole32.lib;oleaut32.lib;user32.lib;gdi32.lib;advapi32.lib;C:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib\Qt5Widgets.lib;C:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib\Qt5Gui.lib;C:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib\Qt5Core.lib;C:\Program Files\IBM\ILOG\CPLEX_Studio128\concert\lib\x64_windows_vs2017\stat_mda\concert.lib;C:\Program Files\IBM\ILOG\CPLEX_Studio128\cplex\lib\x64_windows_vs2017\stat_mda\cplex1280.lib;C:\Program Files\IBM\ILOG\CPLEX_Studio128\cplex\lib\x64_windows_vs2017\stat_mda\ilocplex.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib;C:\openssl\lib;C:\Utils\my_sql\mysql-5.6.11-winx64\lib;C:\Utils\postgresql\pgsql\lib;$(QTDIR)\lib;C:\Qt\Qt5.11.1\5.11.1\msvc2017_64\lib;C:\Program Files\IBM\ILOG\CPLEX_Studio128\concert\lib\x64_windows_vs2017\stat_mda;C:\Program Files\IBM\ILOG\CPLEX_Studio128\cplex\lib\x64_windows_vs2017\stat_mda;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\test3.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <QtMoc>
+      <QTDIR>C:\QT\QT5.11.1\5.11.1\MSVC2017_64</QTDIR>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <InputFile>%(FullPath)</InputFile>
+      <DynamicSource>output</DynamicSource>
+      <IncludePath>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\ActiveQt;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtWidgets;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtGui;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtANGLE;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtCore;release;\include;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\mkspecs\win32-msvc;C:\Program Files\IBM\ILOG\CPLEX_Studio128\concert\include;C:\Program Files\IBM\ILOG\CPLEX_Studio128\cplex\include;%(AdditionalIncludeDirectories)</IncludePath>
+      <Define>_WINDOWS;UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;NDEBUG;_CONSOLE;IL_STD;%(PreprocessorDefinitions)</Define>
+    </QtMoc>
+    <QtUic>
+      <OutputFile>.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+      <QTDIR>C:\QT\QT5.11.1\5.11.1\MSVC2017_64</QTDIR>
+      <InputFile>%(FullPath)</InputFile>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+    </QtUic>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\ActiveQt;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtWidgets;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtGui;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtANGLE;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtCore;debug;\include;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\mkspecs\win32-msvc;C:\Program Files\IBM\ILOG\CPLEX_Studio128\concert\include;C:\Program Files\IBM\ILOG\CPLEX_Studio128\cplex\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;_CONSOLE;NDEBUG;IL_STD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>C:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib\qtmaind.lib;shell32.lib;C:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib\Qt5AxContainerd.lib;C:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib\Qt5AxBased.lib;C:\Qt\Qt5.11.1\5.11.1\msvc2017_64\lib\Qt5Widgetsd.lib;C:\Qt\Qt5.11.1\5.11.1\msvc2017_64\lib\Qt5Guid.lib;C:\Qt\Qt5.11.1\5.11.1\msvc2017_64\lib\Qt5Cored.lib;ole32.lib;oleaut32.lib;user32.lib;gdi32.lib;advapi32.lib;C:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib\Qt5Widgetsd.lib;C:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib\Qt5Guid.lib;C:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib\Qt5Cored.lib;C:\Program Files\IBM\ILOG\CPLEX_Studio128\concert\lib\x64_windows_vs2017\stat_mda\concert.lib;C:\Program Files\IBM\ILOG\CPLEX_Studio128\cplex\lib\x64_windows_vs2017\stat_mda\cplex1280.lib;C:\Program Files\IBM\ILOG\CPLEX_Studio128\cplex\lib\x64_windows_vs2017\stat_mda\ilocplex.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib;C:\openssl\lib;C:\Utils\my_sql\mysql-5.6.11-winx64\lib;C:\Utils\postgresql\pgsql\lib;$(QTDIR)\lib;C:\Qt\Qt5.11.1\5.11.1\msvc2017_64\lib;C:\Program Files\IBM\ILOG\CPLEX_Studio128\concert\lib\x64_windows_vs2017\stat_mda;C:\Program Files\IBM\ILOG\CPLEX_Studio128\cplex\lib\x64_windows_vs2017\stat_mda;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)\test3.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <QtUic>
+      <OutputFile>.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+      <QTDIR>C:\QT\QT5.11.1\5.11.1\MSVC2017_64</QTDIR>
+      <InputFile>%(FullPath)</InputFile>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+    </QtUic>
+    <QtMoc>
+      <QTDIR>C:\QT\QT5.11.1\5.11.1\MSVC2017_64</QTDIR>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <InputFile>%(FullPath)</InputFile>
+      <DynamicSource>output</DynamicSource>
+      <IncludePath>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\ActiveQt;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtWidgets;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtGui;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtANGLE;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtCore;debug;\include;..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\mkspecs\win32-msvc;C:\Program Files\IBM\ILOG\CPLEX_Studio128\concert\include;C:\Program Files\IBM\ILOG\CPLEX_Studio128\cplex\include;%(AdditionalIncludeDirectories)</IncludePath>
+      <Define>_WINDOWS;UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;_CONSOLE;NDEBUG;IL_STD;%(PreprocessorDefinitions)</Define>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="dep_item.cpp" />
+    <ClCompile Include="dialog.cpp" />
+    <ClCompile Include="dialog_changenum.cpp" />
+    <ClCompile Include="dialog_dep.cpp" />
+    <ClCompile Include="dialog_task.cpp" />
+    <ClCompile Include="doc.cpp" />
+    <ClCompile Include="doc_longterm.cpp" />
+    <ClCompile Include="hard_constraint.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainwindow.cpp" />
+    <ClCompile Include="output.cpp" />
+    <ClCompile Include="taskitem.cpp" />
+    <ClCompile Include="toolbox.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="dep_item.h">
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <CompilerFlavor Condition="'$(Configuration)|$(Platform)'=='Release|x64'">msvc</CompilerFlavor>
+      <Include Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Configuration)/moc_predefs.h</Include>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <CompilerFlavor Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">msvc</CompilerFlavor>
+      <Include Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Configuration)/moc_predefs.h</Include>
+    </QtMoc>
+    <QtMoc Include="dialog.h">
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <CompilerFlavor Condition="'$(Configuration)|$(Platform)'=='Release|x64'">msvc</CompilerFlavor>
+      <Include Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Configuration)/moc_predefs.h</Include>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <CompilerFlavor Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">msvc</CompilerFlavor>
+      <Include Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Configuration)/moc_predefs.h</Include>
+    </QtMoc>
+    <QtMoc Include="dialog_dep.h">
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <CompilerFlavor Condition="'$(Configuration)|$(Platform)'=='Release|x64'">msvc</CompilerFlavor>
+      <Include Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Configuration)/moc_predefs.h</Include>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <CompilerFlavor Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">msvc</CompilerFlavor>
+      <Include Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Configuration)/moc_predefs.h</Include>
+    </QtMoc>
+    <QtMoc Include="doc.h">
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <CompilerFlavor Condition="'$(Configuration)|$(Platform)'=='Release|x64'">msvc</CompilerFlavor>
+      <Include Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Configuration)/moc_predefs.h</Include>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <CompilerFlavor Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">msvc</CompilerFlavor>
+      <Include Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Configuration)/moc_predefs.h</Include>
+    </QtMoc>
+    <QtMoc Include="doc_longterm.h">
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <CompilerFlavor Condition="'$(Configuration)|$(Platform)'=='Release|x64'">msvc</CompilerFlavor>
+      <Include Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Configuration)/moc_predefs.h</Include>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <CompilerFlavor Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">msvc</CompilerFlavor>
+      <Include Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Configuration)/moc_predefs.h</Include>
+    </QtMoc>
+    <QtMoc Include="hard_constraint.h">
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <CompilerFlavor Condition="'$(Configuration)|$(Platform)'=='Release|x64'">msvc</CompilerFlavor>
+      <Include Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Configuration)/moc_predefs.h</Include>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <CompilerFlavor Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">msvc</CompilerFlavor>
+      <Include Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Configuration)/moc_predefs.h</Include>
+    </QtMoc>
+    <QtMoc Include="mainwindow.h">
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <CompilerFlavor Condition="'$(Configuration)|$(Platform)'=='Release|x64'">msvc</CompilerFlavor>
+      <Include Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Configuration)/moc_predefs.h</Include>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <CompilerFlavor Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">msvc</CompilerFlavor>
+      <Include Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Configuration)/moc_predefs.h</Include>
+    </QtMoc>
+    <QtMoc Include="output.h">
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <CompilerFlavor Condition="'$(Configuration)|$(Platform)'=='Release|x64'">msvc;msvc</CompilerFlavor>
+      <Include Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Configuration)/moc_predefs.h;$(Configuration)/moc_predefs.h</Include>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <CompilerFlavor Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">msvc;msvc</CompilerFlavor>
+      <Include Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Configuration)/moc_predefs.h;$(Configuration)/moc_predefs.h</Include>
+    </QtMoc>
+    <QtMoc Include="taskitem.h">
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <CompilerFlavor Condition="'$(Configuration)|$(Platform)'=='Release|x64'">msvc</CompilerFlavor>
+      <Include Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Configuration)/moc_predefs.h</Include>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <CompilerFlavor Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">msvc</CompilerFlavor>
+      <Include Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Configuration)/moc_predefs.h</Include>
+    </QtMoc>
+    <QtMoc Include="toolbox.h">
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <CompilerFlavor Condition="'$(Configuration)|$(Platform)'=='Release|x64'">msvc</CompilerFlavor>
+      <Include Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Configuration)/moc_predefs.h</Include>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <CompilerFlavor Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">msvc</CompilerFlavor>
+      <Include Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Configuration)/moc_predefs.h</Include>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="debug\moc_predefs.h.cbt">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zi -MDd -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E ..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;debug\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_predefs.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="release\moc_predefs.h.cbt">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E ..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;release\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_predefs.h;%(Outputs)</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <QtMoc Include="dialog_changenum.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\.;.\GeneratedFiles;.;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\ActiveQt;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtWidgets;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtGui;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtANGLE;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtCore;.\debug;\include;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\mkspecs\win32-msvc</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">_WINDOWS;UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\.;.\GeneratedFiles;.;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\ActiveQt;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtWidgets;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtGui;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtANGLE;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtCore;.\release;\include;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\mkspecs\win32-msvc</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">_WINDOWS;UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;NDEBUG</Define>
+    </QtMoc>
+    <QtMoc Include="dialog_task.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\.;.\GeneratedFiles;.;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\ActiveQt;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtWidgets;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtGui;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtANGLE;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtCore;.\debug;\include;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\mkspecs\win32-msvc</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">_WINDOWS;UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\.;.\GeneratedFiles;.;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\ActiveQt;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtWidgets;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtGui;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtANGLE;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtCore;.\release;\include;.\..\..\..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\mkspecs\win32-msvc</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">_WINDOWS;UNICODE;_UNICODE;WIN32;WIN64;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_AXCONTAINER_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;NDEBUG</Define>
+    </QtMoc>
+    <ClInclude Include="GeneratedFiles\ui_dialog.h" />
+    <ClInclude Include="GeneratedFiles\ui_dialog_changenum.h" />
+    <ClInclude Include="GeneratedFiles\ui_dialog_dep.h" />
+    <ClInclude Include="GeneratedFiles\ui_dialog_task.h" />
+    <ClInclude Include="GeneratedFiles\ui_mainwindow.h" />
+    <ClInclude Include="GeneratedFiles\ui_output.h" />
+    <ClInclude Include="GeneratedFiles\ui_toolbox.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="dialog.ui">
+    </QtUic>
+    <QtUic Include="dialog_changenum.ui" />
+    <QtUic Include="dialog_dep.ui">
+    </QtUic>
+    <QtUic Include="dialog_task.ui" />
+    <QtUic Include="mainwindow.ui">
+    </QtUic>
+    <QtUic Include="output.ui">
+    </QtUic>
+    <QtUic Include="toolbox.ui">
+    </QtUic>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" Qt5Version_x0020_x64="msvc2017_64" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

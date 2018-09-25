@@ -660,7 +660,7 @@ void MainWindow::on_pushButton_2_clicked()
 		
 	}
 	progressDialog->setValue(70);
-	//增加tyt
+	//增加tytt
 
 	//output*op6 = new output();
 	//for (int i = 0; i <err.size(); i++) {
